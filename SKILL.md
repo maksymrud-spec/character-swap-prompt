@@ -40,7 +40,7 @@ The user provides two packs of images:
 
 **Pack 2 — Scene image(s):**
 - Photos or illustrations showing characters in an environment
-- Each scene has an identifier (e.g. `@32`, `@scene5`)
+- Each scene is numbered sequentially starting from `@001`, based on the order the user provides them (e.g. `@001`, `@002`, `@003`)
 - These scenes contain original characters who will be fully replaced
 - From the scene, extract: number of characters, their positions (left/right/center/background), and distinguishing visual traits (hair color, outfit color, etc.)
 
@@ -93,43 +93,43 @@ Remake @[scene_id] but with @[char1] instead of [description of original charact
 ## Examples
 
 ### Example 1 — Two characters replaced
-**Input context:** Scene `@32` has a ginger woman on the left and a woman with blue hair on the right. Replace with `@wife` and `@alice`.
+**Input context:** Scene `@001` has a ginger woman on the left and a woman with blue hair on the right. Replace with `@wife` and `@alice`.
 
 **Output:**
 ```
-Remake @32 but with @wife instead of ginger woman on the left and @alice instead of woman with blue hair. Keep characters emotions, characters' cloth, camera position and poses from @32
+Remake @001 but with @wife instead of ginger woman on the left and @alice instead of woman with blue hair. Keep characters emotions, characters' cloth, camera position and poses from @001
 ```
 
 ### Example 2 — One character replaced
-**Input context:** Scene `@07` has a tall man with a beard in the center. Replace with `@dave`.
+**Input context:** Scene `@002` has a tall man with a beard in the center. Replace with `@dave`.
 
 **Output:**
 ```
-Remake @07 but with @dave instead of tall bearded man in the center. Keep characters emotions, characters' cloth, camera position and poses from @07
+Remake @002 but with @dave instead of tall bearded man in the center. Keep characters emotions, characters' cloth, camera position and poses from @002
 ```
 
 ### Example 3 — Three characters replaced
-**Input context:** Scene `@15` has a blonde woman on the left, a man in a black jacket in the center, and a redhead girl on the right. Replace with `@lisa`, `@john`, `@kate`.
+**Input context:** Scene `@003` has a blonde woman on the left, a man in a black jacket in the center, and a redhead girl on the right. Replace with `@lisa`, `@john`, `@kate`.
 
 **Output:**
 ```
-Remake @15 but with @lisa instead of blonde woman on the left, @john instead of man in black jacket in the center and @kate instead of redhead girl on the right. Keep characters emotions, characters' cloth, camera position and poses from @15
+Remake @003 but with @lisa instead of blonde woman on the left, @john instead of man in black jacket in the center and @kate instead of redhead girl on the right. Keep characters emotions, characters' cloth, camera position and poses from @003
 ```
 
 ### Example 4 — Anthropomorphic animals with background people
-**Input context:** Pack 1 characters are anthropomorphic animals (e.g. a fox in a suit, a rabbit in a dress). Scene `@22` has a couple sitting at a café table (man on the left, woman on the right) with several other customers visible in the background. Replace the couple with `@foxman` and `@bunny`.
+**Input context:** Pack 1 characters are anthropomorphic animals (e.g. a fox in a suit, a rabbit in a dress). Scene `@004` has a couple sitting at a café table (man on the left, woman on the right) with several other customers visible in the background. Replace the couple with `@foxman` and `@bunny`.
 
 **Output:**
 ```
-Remake @22 but with @foxman instead of man on the left and @bunny instead of woman on the right. Keep characters emotions, characters' cloth, camera position and poses from @22. All the people in the background, also anthropomorphic animals in clothes
+Remake @004 but with @foxman instead of man on the left and @bunny instead of woman on the right. Keep characters emotions, characters' cloth, camera position and poses from @004. All the people in the background, also anthropomorphic animals in clothes
 ```
 
 ### Example 5 — Anthropomorphic animals WITHOUT background people
-**Input context:** Pack 1 characters are anthropomorphic animals. Scene `@09` shows only two characters alone in a room — a tall man and a short woman. No other people visible. Replace with `@wolfie` and `@catgirl`.
+**Input context:** Pack 1 characters are anthropomorphic animals. Scene `@005` shows only two characters alone in a room — a tall man and a short woman. No other people visible. Replace with `@wolfie` and `@catgirl`.
 
 **Output:**
 ```
-Remake @09 but with @wolfie instead of tall man and @catgirl instead of short woman. Keep characters emotions, characters' cloth, camera position and poses from @09
+Remake @005 but with @wolfie instead of tall man and @catgirl instead of short woman. Keep characters emotions, characters' cloth, camera position and poses from @005
 ```
 *(No anthropomorphic suffix because there are no background people in the scene.)*
 
