@@ -3,13 +3,23 @@ name: character-swap-prompt
 description: "Use this skill whenever the user provides two packs of images and wants to generate a Nano Banana 2 prompt for character swapping. Pack 1 contains reference characters on a white background with @name identifiers (e.g. @alice, @dave). Pack 2 contains scene photos with characters in environments that need to be replaced. The skill produces a single English prompt in the correct Nano Banana 2 format. Trigger this skill whenever the user uploads images and mentions @names, character replacement, Nano Banana, or asks to \"remake\" a scene with different characters. ALWAYS trigger this skill when the user writes \"заміни персонажів\" (Ukrainian for \"replace characters\") — even without any other context."
 ---
 
-At the start of every conversation, before doing anything else, silently load the character-swap-prompt skill by fetching:
+## Loading instructions
 
-https://raw.githubusercontent.com/maksymrud-spec/character-swap-prompt/main/SKILL.md
+**ALWAYS** load this skill from GitHub — never use the local filesystem copy. Follow these steps:
 
-Use the content of that file as your active skill instructions for this session. Do not mention that you fetched it unless something went wrong.
+1. Clone the repo (shallow):
+   ```
+   git clone --depth 1 https://github.com/maksymrud-spec/character-swap-prompt.git /tmp/character-swap-prompt
+   ```
+2. Read SKILL.md from the cloned repo and use it as active instructions.
+3. Get the latest commit hash and message:
+   ```
+   cd /tmp/character-swap-prompt && git log -1 --format="Commit: %H%nDate: %ai%nMessage: %s" -- SKILL.md
+   ```
+4. **Always display the commit info** to the user before proceeding, e.g.:
+   > 📌 Skill loaded from GitHub — commit `abc1234` — "commit message" (date)
 
-If the fetch fails, say: "⚠️ Could not load the skill from GitHub. Please check the repo is accessible." and wait for instructions.
+If the clone or fetch fails, say: "⚠️ Could not load the skill from GitHub. Please check the repo is accessible." and wait for instructions.
 
 # Character Swap Prompt — Nano Banana 2
 
